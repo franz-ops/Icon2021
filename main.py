@@ -7,6 +7,7 @@ from sklearn.feature_extraction import DictVectorizer
 
 from terrain_classifier import *
 import csv
+import marketplace
 
 window = tk.Tk()
 window.geometry("600x450")
@@ -177,3 +178,12 @@ if __name__ == '__main__':
             textDim = tk.Label(text=y, fg="#282828", bg="#67BD66", font=("Georgia", 14)).place(x=j + 150, y=170)
         j += 1
     popUp.mainloop()
+    marketplace.gen_kinds(dictPlant)
+    marketplace.gen_Bags()
+    print("Colture disponibili sul mercato: ")
+    print("{:<12} {:<20} {:<10} {:<10}".format('Varietà','Incassi previsti','Costi', 'Area coltivata in mq'))
+    for b in marketplace.bags:
+        print("{:<12} {:<20} {:<10} {:<10}".format(b.id, b.value, b.weight, b.mq))
+    budget = input("Inserire un budget: ")
+    print("Incassi previsti: ")
+    print(marketplace.knapsack(marketplace.bags, int(budget), dictPlant))
