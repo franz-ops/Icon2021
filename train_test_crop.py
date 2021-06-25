@@ -6,9 +6,66 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report, accuracy_score, precision_score, recall_score
 import matplotlib.pyplot as plt
 from sklearn.neighbors import KNeighborsClassifier
+import seaborn as sb
+
+def print_hist_features(ds):
+      all_columns = ds.columns[:-1]
+      plt.figure(figsize=(15,13))
+      i = 1
+      for column in all_columns[:]:
+            plt.subplot(3,3,i)
+            sb.histplot(data[column])
+            i+=1
+      plt.show()
+
 
 if __name__ == '__main__':
     data = pd.read_csv('datasets/Crop_recommendation.csv')
+    
+    #Dataset label distribution
+    histogram = data['label'].value_counts()
+    plt.bar(histogram.to_dict().keys(), histogram.to_dict().values(), 0.7)
+    plt.xticks(rotation=-90)
+    plt.show()
+
+    #Feature variance
+    print_hist_features(data)
+
+    #Features vs Crop
+    #Rainfall
+    sb.scatterplot(data=data, y="label", x="rainfall", hue="label")
+    plt.title("Rainfall vs Crop")
+    plt.show()
+
+    #Humidity
+    sb.scatterplot(data=data, y="label", x="humidity", hue="label")
+    plt.title("Humidity vs Crop")
+    plt.show()
+
+    #N
+    sb.scatterplot(data=data, y="label", x="N", hue="label")
+    plt.title("Nitrogen vs Crop")
+    plt.show()
+
+    #P
+    sb.scatterplot(data=data, y="label", x="P", hue="label")
+    plt.title("Phosphorus  vs Crop")
+    plt.show()
+
+    #K
+    sb.scatterplot(data=data, y="label", x="K", hue="label")
+    plt.title("Potassium  vs Crop")
+    plt.show()
+
+    #pH
+    sb.scatterplot(data=data, y="label", x="ph", hue="label")
+    plt.title("pH  vs Crop")
+    plt.show()
+
+    #Temperature
+    sb.scatterplot(data=data, y="label", x="temperature", hue="label")
+    plt.title("Temperature  vs Crop")
+    plt.show()
 
     X = data.iloc[:, 0:7]
     y = data.iloc[:, 7:8]
