@@ -3,8 +3,9 @@ import pandas as pd
 from sklearn import tree
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import classification_report
+from sklearn.metrics import classification_report, accuracy_score, precision_score, recall_score
 import matplotlib.pyplot as plt
+from sklearn.neighbors import KNeighborsClassifier
 
 if __name__ == '__main__':
     data = pd.read_csv('datasets/Crop_recommendation.csv')
@@ -37,16 +38,69 @@ if __name__ == '__main__':
 
     X_train, X_test, y_train, y_test = train_test_split(X, np.ravel(y), test_size=0.3, random_state=42)
 
+    # Random forest(Depth 3) Metrics
+    clf = RandomForestClassifier(max_depth=3, random_state=10)
+    clf.fit(X_train, y_train)
+    predictions = clf.predict(X_test)
+    depth3_accuracy = round(accuracy_score(y_test, predictions), 2)
+    depth3_precision = round(precision_score(y_test, predictions, average="macro", zero_division=1), 2)
+    depth3_recall = round(recall_score(y_test, predictions, average="macro"), 2)
+    depth3_error_rate = np.mean(predictions != y_test)
+
+    # Random forest(Depth 7) Metrics
     clf = RandomForestClassifier(max_depth=7, random_state=10)
     clf.fit(X_train, y_train)
-
     predictions = clf.predict(X_test)
+    depth7_accuracy = round(accuracy_score(y_test, predictions), 2)
+    depth7_precision = round(precision_score(y_test, predictions, average="macro", zero_division=1), 2)
+    depth7_recall = round(recall_score(y_test, predictions, average="macro"), 2)
+    depth7_error_rate = np.mean(predictions != y_test)
 
-    print(classification_report(y_test, predictions))
+    # Random forest(Depth 13) Metrics
+    clf = RandomForestClassifier(max_depth=13, random_state=10)
+    clf.fit(X_train, y_train)
+    predictions = clf.predict(X_test)
+    depth13_accuracy = round(accuracy_score(y_test, predictions), 2)
+    depth13_precision = round(precision_score(y_test, predictions, average="macro", zero_division=1), 2)
+    depth13_recall = round(recall_score(y_test, predictions, average="macro"), 2)
+    depth13_error_rate = np.mean(predictions != y_test)
 
-    fig, axes = plt.subplots(nrows=1, ncols=1, figsize=(4, 4), dpi=800)
-    tree.plot_tree(clf.estimators_[0],
-                   feature_names=fn,
-                   class_names=cn,
-                   filled=True);
-    fig.savefig('rf_individualtree.png')
+    # Depth VS [Accuracy - Precision - Recall - Error Rate]
+    results = pd.DataFrame.from_dict({
+        'Depth=3': [depth3_accuracy, depth3_precision, depth3_recall, depth3_error_rate],
+        'Depth=7': [depth7_accuracy, depth7_precision, depth7_recall, depth7_error_rate],
+        'Depth=13': [depth13_accuracy, depth13_precision, depth13_recall, depth13_error_rate],
+    },
+        orient='index', columns=['Accuracy', 'Precision', 'Recall', 'Error Rate'])
+
+    print(results)
+
+    # Accuracy VS Depth Random forest Plot
+    accuracy = []
+    for i in range(1, 16):
+        clf = RandomForestClassifier(max_depth=i, random_state=10)
+        clf.fit(X_train, y_train)
+        predictions = clf.predict(X_test)
+        accuracy.append(accuracy_score(y_test, predictions))
+
+    plt.figure(figsize=(10, 6))
+    plt.plot(range(1, 16), accuracy, color='blue', linestyle='solid',
+             marker='.', markerfacecolor='blue', markersize=10)
+    plt.title('Accuracy vs. Random Forest Depth')
+    plt.xlabel('Depth')
+    plt.ylabel('Accuracy')
+
+    plt.show()
+    print()
+
+    # Random Forest Depth=7 Results
+    clf = RandomForestClassifier(max_depth=7, random_state=10)
+    clf.fit(X_train, y_train)
+    predictions = clf.predict(X_test)
+    print("Random Forest(Depth=7) Results:\n" + classification_report(y_test, predictions))
+
+    # KNN Results (K = 3)
+    neigh = KNeighborsClassifier(n_neighbors=3)
+    neigh.fit(X, np.ravel(y))
+    predictionsKNN = neigh.predict(X_test)
+    print("Knn Results (K = 3):\n" + classification_report(y_test, predictionsKNN))
