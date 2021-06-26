@@ -1,0 +1,393 @@
+# bc_simple_rules.krb
+
+
+# MAIS
+
+what_malattia_Elmintosporiosi
+    use what_disease(Elmintosporiosi)
+    when
+        questions.scelta_coltura($ans)
+        check $ans in (2,)
+        questions.macchie_foglie(True)
+        questions.colore_macchie($c)
+	check $c in (3,)
+
+what_malattia_cima_pazza
+    use what_disease(Cima_pazza)
+    when
+        questions.scelta_coltura($ans)
+        check $ans in (2,)
+        questions.nanismo(True)
+        questions.foglie_nastriformi(True)
+	questions.arricciamento_foglie_superiori(True)
+
+what_malattia_marciume_dello_stocco_precoce
+    use what_disease(Marciume_dello_stocco_precoce)
+    when
+        questions.scelta_coltura($ans)
+        check $ans in (2,)
+        questions.nanismo(True)
+        questions.rammollimento_fusto(True)
+	questions.disgregazione_parte_interna(True)
+	questions.muffa(True)
+	questions.clima_umido(True)
+	questions.colore_muffa($colors)
+	check $colors in (1,2)
+
+what_malattia_marciume_dello_stocco
+    use what_disease(Marciume_dello_stocco)
+    when
+        questions.scelta_coltura($ans)
+        check $ans in (2,)
+        questions.rammollimento_fusto(True)
+	questions.disgregazione_parte_interna(True)
+	questions.muffa(True)
+	questions.clima_umido(True)
+	questions.colore_muffa($colors)
+	check $colors in (1,2)
+	questions.nanismo(False)
+
+what_malattia_avvizzimento_batterito
+    use what_disease(Avvizzimento_batterico)
+    when
+        questions.scelta_coltura($ans)
+        check $ans in (2,)
+        questions.piante_avvizzite(True)
+	questions.macchie_foglie(True)
+	questions.colore_macchie($c)
+	check $c in (1,2)
+
+what_malattia_mosaico
+    use what_disease(Mosaico_del_mais)
+    when
+        questions.scelta_coltura($ans)
+        check $ans in (2,)
+        questions.macchie_foglie(True)
+	questions.colore_macchie($ans)
+	check $ans in (2,)
+	questions.nanismo(True)
+	questions.macchie_margini(False)
+
+what_malattia_nanismo_giallo
+    use what_disease(Nanismo_giallo)
+    when
+        questions.scelta_coltura($ans)
+        check $ans in (2,)
+        questions.nanismo(True)
+	questions.macchie_foglie(True)
+	questions.colore_macchie($c)
+	check $c in (2,4)
+	questions.macchie_margini(True)
+
+what_malattia_fusariosi_spiga
+    use what_disease(Fusariosi_della_spiga)
+    when
+        questions.scelta_coltura($ans)
+        check $ans in (2,)
+        questions.muffa(True)
+	questions.colore_muffa($m)
+	check $m in (1,)
+	questions.rammollimento_fusto(False)
+
+what_malattia_marciumi_aspergillus
+    use what_disease(Marciumi_da_aspergillus)
+    when
+        questions.scelta_coltura($ans)
+        check $ans in (2,)
+        questions.muffa(True)
+	questions.colore_muffa($m)
+	check $m in (3,)
+
+
+
+what_disease_peronospora_batterica
+    use what_disease(peronospora_batterica)
+    when
+        questions.scelta_coltura($ans)
+        check $ans in (1,)
+        questions.appassimento(True)
+        questions.sostanza_batterica_o_lattea(True)
+
+what_disease_stem_borer
+    use what_disease(stem_borer)
+    when
+        questions.scelta_coltura($ans)
+        check $ans in (1,)
+        questions.appassimento(True)
+        questions.sostanza_batterica_o_lattea(False)
+        questions.presenza_insetti(True)
+        questions.deadhearths(True)
+        questions.base_danneggiata(True)
+
+what_disease_cimice_nera
+    use what_disease(cimice_nera)
+    when
+        questions.scelta_coltura($ans)
+        check $ans in (1,)
+        questions.appassimento(True)
+        questions.sostanza_batterica_o_lattea(False)
+        questions.presenza_insetti(True)
+        questions.deadhearths(True)
+        questions.base_danneggiata(False)
+
+what_disease_spodoptera_frugiperda
+    use what_disease(spodoptera_frugiperda)
+    when
+        questions.scelta_coltura($ans)
+        check $ans in (1,)
+        questions.appassimento(True)
+        questions.sostanza_batterica_o_lattea(False)
+        questions.presenza_insetti(True)
+        questions.deadhearths(False)
+        questions.scomparsa_foglie(True)
+
+what_disease_tarli
+    use what_disease(tarlo)
+    when
+        questions.scelta_coltura($ans)
+        check $ans in (1,)
+        questions.appassimento(True)
+        questions.sostanza_batterica_o_lattea(False)
+        questions.presenza_insetti(True)
+        questions.deadhearths(False)
+        questions.scomparsa_foglie(False)
+
+what_disease_marcescenza_delle_foglie_causata_da_Sarocladium_oryzae
+    use what_disease(marcescenza_delle_foglie_causata_da_Sarocladium_oryzae)
+    when
+        questions.scelta_coltura($ans)
+        check $ans in (1,)
+        questions.appassimento(True)
+        questions.sostanza_batterica_o_lattea(False)
+        questions.presenza_insetti(False)
+
+what_disease_insetti_fulgoroidei
+    use what_disease(insetti_fulgoroidei)
+    when
+        questions.scelta_coltura($ans)
+        check $ans in (1,)
+        questions.appassimento(False)
+        questions.morte_della_pianta(True)
+        questions.presenza_insetti(True)
+
+what_disease_maculatura_batterica
+    use what_disease(maculatura_batterica)
+    when
+        questions.scelta_coltura($ans)
+        check $ans in (1,)
+        questions.appassimento(False)
+        questions.morte_della_pianta(True)
+        questions.presenza_insetti(False)
+        questions.sostanza_batterica_o_lattea(True)
+
+what_disease_macchia_di_cercospora
+    use what_disease(macchia_di_Cercospora)
+    when
+        questions.scelta_coltura($ans)
+        check $ans in (1,)
+        questions.appassimento(False)
+        questions.morte_della_pianta(True)
+        questions.presenza_insetti(False)
+        questions.sostanza_batterica_o_lattea(False)
+
+what_disease_blast_leaf_collar
+    use what_disease(brusone)
+    when
+        questions.scelta_coltura($ans)
+        check $ans in (1,)
+        questions.appassimento(False)
+        questions.morte_della_pianta(False)
+        questions.lesioni_grigio_verdi(True)
+        questions.lesioni_allungate(True)
+
+what_disease_brown_spot
+    use what_disease(spot_marrone)
+    when
+        questions.scelta_coltura($ans)
+        check $ans in (1,)
+        questions.appassimento(False)
+        questions.morte_della_pianta(False)
+        questions.lesioni_grigio_verdi(True)
+        questions.lesioni_allungate(False)
+
+# POMODORO
+
+what_disease_Peronospora_precoce
+    use what_disease(Peronospora_precoce)
+    when
+        questions.scelta_coltura($ans)
+        check $ans in (3,)
+        questions.macchie(True)
+        questions.macchie_scure(True)
+        questions.macchie_anelli_foglie(True)
+
+what_disease_Flagello_del_sud
+    use what_disease(Flagello_del_sud)
+    when
+        questions.scelta_coltura($ans)
+        check $ans in (3,)
+        questions.macchie(True)
+        questions.macchie_scure(True)
+        questions.macchie_anelli_foglie(False)
+        questions.macchie_scure_e_rotonde(True)
+
+what_disease_Leveillula_Taurica
+    use what_disease(Leveillula_Taurica)
+    when
+        questions.scelta_coltura($ans)
+        check $ans in (3,)
+        questions.macchie(True)
+        questions.macchie_scure(False)
+
+what_disease_Speck_batterico
+    use what_disease(Speck_batterico)
+    when
+        questions.scelta_coltura($ans)
+        check $ans in (3,)
+        questions.macchie(True)
+        questions.macchie_scure(True)
+        questions.macchie_anelli_foglie(False)
+        questions.macchie_scure_e_rotonde(False)
+        questions.macchie_scure_e_bordo_giallo(True)
+
+what_disease_Antracnosi
+    use what_disease(Antracnosi)
+    when
+        questions.scelta_coltura($ans)
+        check $ans in (3,)
+        questions.macchie(True)
+        questions.macchie_scure(True)
+        questions.macchie_anelli_foglie(False)
+        questions.macchie_scure_e_rotonde(False)
+        questions.macchie_scure_e_bordo_giallo(False)
+        questions.macchie_rotonde_e_infossate(True)
+
+what_disease_Buckeye_Rot
+    use what_disease(Buckeye_Rot)
+    when
+        questions.scelta_coltura($ans)
+        check $ans in (3,)
+        questions.macchie(True)
+        questions.macchie_scure(True)
+        questions.macchie_anelli_foglie(False)
+        questions.macchie_scure_e_rotonde(False)
+        questions.macchie_scure_e_bordo_giallo(False)
+        questions.macchie_rotonde_e_infossate(False)
+
+what_disease_Peronospora
+    use what_disease(Peronospora)
+    when
+        questions.scelta_coltura($ans)
+        check $ans in (3,)
+        questions.macchie(False)
+        questions.muffa_bianca(True)
+
+what_disease_Verticillium_Wilt
+    use what_disease(Verticillium_Wilt)
+    when
+        questions.scelta_coltura($ans)
+        check $ans in (3,)
+        questions.macchie(False)
+        questions.muffa_bianca(False)
+        questions.appassimento(True)
+
+what_disease_Muro_grigio
+    use what_disease(Muro_grigio)
+    when
+        questions.scelta_coltura($ans)
+        check $ans in (3,)
+        questions.macchie(False)
+        questions.muffa_bianca(False)
+        questions.appassimento(False)
+        questions.colore_grigio(True)
+
+
+# --------------------- da controllare --------------------------------
+what_disease_Septoriosi
+    use what_disease(Septoriosi)
+    when
+        questions.scelta_coltura($ans)
+        check $ans in (3,)
+        questions.macchie(False)
+        questions.muffa_bianca(False)
+        questions.appassimento(False)
+        questions.colore_grigio(False)
+
+# COTONE
+
+what_disease_stemphylium_solani
+    use what_disease(stemphylium_solani)
+    when
+        questions.scelta_coltura($ans)
+        check $ans in (4,)
+        questions.macchie(True)
+        questions.piccole_macchie_rotonde(True)
+
+what_disease_alternaria_alternata
+    use what_disease(alternaria_alternata)
+    when
+        questions.scelta_coltura($ans)
+        check $ans in (4,)
+        questions.macchie(True)
+        questions.piccole_macchie_rotonde(False)
+        questions.grandi_macchie_rotonde(True)
+
+what_disease_myrothecium_roridum
+    use what_disease(myrothecium_roridum)
+    when
+        questions.scelta_coltura($ans)
+        check $ans in (4,)
+        questions.macchie(True)
+        questions.piccole_macchie_rotonde(False)
+        questions.grandi_macchie_rotonde(False)
+        questions.macchie_marroni_con_buchi(True)
+
+what_disease_mycosphaerella_gossypina
+    use what_disease(mycosphaerella_gossypina)
+    when
+        questions.scelta_coltura($ans)
+        check $ans in (4,)
+        questions.macchie(True)
+        questions.piccole_macchie_rotonde(False)
+        questions.grandi_macchie_rotonde(False)
+        questions.macchie_marroni_con_buchi(False)
+        questions.macchie_con_bordi_marroni(True)
+
+what_disease_puccinia_cacabata
+    use what_disease(puccinia_cacabata)
+    when
+        questions.scelta_coltura($ans)
+        check $ans in (4,)
+        questions.macchie(True)
+        questions.piccole_macchie_rotonde(False)
+        questions.grandi_macchie_rotonde(False)
+        questions.macchie_marroni_con_buchi(False)
+        questions.macchie_con_bordi_marroni(False)
+
+what_disease_mycosphaerella_areola
+    use what_disease(mycosphaerella_areola)
+    when
+        questions.scelta_coltura($ans)
+        check $ans in (4,)
+        questions.macchie(False)
+        questions.muffa(True)
+
+what_disease_fusariosi
+    use what_disease(fusariosi)
+    when
+        questions.scelta_coltura($ans)
+        check $ans in (4,)
+        questions.macchie(False)
+        questions.muffa(False)
+        questions.radici_marce(True)
+
+what_disease_verticillium_wilt
+    use what_disease(verticillium_wilt)
+    when
+        questions.scelta_coltura($ans)
+        check $ans in (4,)
+        questions.macchie(False)
+        questions.muffa(False)
+        questions.radici_marce(False)
+        questions.appassimento(True)
+
