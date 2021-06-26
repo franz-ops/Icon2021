@@ -182,8 +182,19 @@ if __name__ == '__main__':
     marketplace.gen_Bags()
     print("Colture disponibili sul mercato: ")
     print("{:<12} {:<20} {:<10} {:<10}".format('Varietà','Incassi previsti','Costi', 'Area coltivata in mq'))
+    print("-"*68)
     for b in marketplace.bags:
         print("{:<12} {:<20} {:<10} {:<10}".format(b.id, b.value, b.weight, b.mq))
     budget = input("Inserire un budget: ")
     print("Incassi previsti: ")
-    print(marketplace.knapsack(marketplace.bags, int(budget), dictPlant))
+    income, costs, items = marketplace.knapsack(marketplace.bags, int(budget), dictPlant)
+    print(str(income)+"€")
+    print("Spese di mantenimento: ")
+    print(str(costs)+"€")
+    print("Acquisti: ")
+    print("{:<12} {:<20} {:<10} {:<10}".format('Varietà','Incassi previsti','Costi', 'Area coltivata in mq'))
+    print("-"*68)
+    for i in items:
+        if(i[1]==1):
+            b=i[0]
+            print("{:<12} {:<20} {:<10} {:<10}".format(b.id, b.value, b.weight, b.mq))

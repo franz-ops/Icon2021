@@ -53,7 +53,6 @@ def upper_bound(u, k, n, v, w):
                 bound += v[j]
                 wt += w[j]
                 j += 1
-            # fill knapsack with fraction of a remaining item
             if j < n:
                 bound += (k - wt) * float(v[j])/ w[j]
             return bound
@@ -92,7 +91,6 @@ def knapsack(items, capacity, terr):
             c = q.get()
             if c.bound > value:
                 level = c.level+1
-            # check 'left' node (if item is added to knapsack)
             left = Node(level,c.value + v[level-1], c.weight + w[level-1], 0.0, c.contains[:])
             left.bound = upper_bound(left, capacity, item_count, v, w)
             left.contains.append(level)
@@ -102,7 +100,6 @@ def knapsack(items, capacity, terr):
                     best = set(left.contains)
                 if left.bound > value:
                     q.put(left)
-                # check 'right' node (if items is not added to knapsack)   
             right = Node(level,c.value, c.weight, 0.0, c.contains[:])
             right.bound = upper_bound(right, capacity, item_count, v, w)
             if isGoal(right):
@@ -114,6 +111,7 @@ def knapsack(items, capacity, terr):
         for b in best:
             taken[b-1] = 1
         value = sum([i*j for (i,j) in zip(v,taken)])
-        return value
+        weight = sum([i*j for (i,j) in zip(w,taken)])
+        return value, weight, zip(items ,taken)
 
 
