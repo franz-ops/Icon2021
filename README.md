@@ -3,7 +3,7 @@
 ## Indice
 
 1. [Introduzione](#1-introduzione)
-2. [Struttura progetto](# 2.-Struttura-Progetto)
+2. [Struttura progetto](#2.-Struttura-Progetto)
 3. [Requisiti](#3-requisiti)
 4. [Evoluzione del progetto](#4-evoluzione-del-progetto)
 
