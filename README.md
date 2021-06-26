@@ -3,8 +3,9 @@
 ## Indice
 
 1. [Introduzione](#1-introduzione)
-2. [Requisiti](#2-requisiti)
-3. [Sviluppi Futuri](#3-evoluzione-del-progetto)
+2. [Struttura progetto](# 2.-Struttura-Progetto)
+3. [Requisiti](#3-requisiti)
+4. [Evoluzione del progetto](#4-evoluzione-del-progetto)
 
 ## 1. Introduzione
 
@@ -21,15 +22,28 @@ A.A 2020-2021
 
 Università degli studi di Bari "Aldo Moro"
 
+## 2. Struttura Progetto
 
-## 2. Requisiti 
+```
+|–– datasets
+|    |–– Crop_recommendation.csv
+|–– .gitignore
+|-- Documentazione Smart Farm.pdf
+|-- README.md
+|–– main.py
+|–– marketplace.py
+|–– terrain_classifier.py
+|–– train_test_crop.py
+```
+
+## 3. Requisiti 
 
 Per eseguire il progetto è necessario installare la seguente versione di Python:
 
 - `Python 3.7+`
 
 
-## 3. Evoluzione del progetto
+## 4. Evoluzione del progetto
 
 In futuro, il progetto realizzato potrà essere utilizzato, ampliato e migliorato da aziende che operano nel settore, non solo regionale, ma anche nazionale e chissà…mondiale.
 Il nostro obiettivo è sempre stato sempre quello di realizzare un sistema non solo efficiente, ma anche utile per le quotidiane mansioni lavorative di una singola azienda.
