@@ -7,8 +7,8 @@ Kind = namedtuple("Kind", ['id', 'value_mq', 'weight_mq', 'crop'])
 
 MAX_KIND = 3
 MAX_BAGS_PER_KIND = 100
-MAX_VALUE_MQ = 10
-MAX_WEIGHT_MQ = 10
+MAX_VALUE_MQ = 15
+MAX_WEIGHT_MQ = 7
 MAX_MQ = 25
 MIN_MQ = 5
 
@@ -23,7 +23,7 @@ def gen_kinds(plants):
     
     for k in dictKinds:
         for i in range(dictKinds[k]):
-            kinds.append(Kind(k+str(i), random.randint(1, MAX_VALUE_MQ), random.randint(1, MAX_WEIGHT_MQ), k))
+            kinds.append(Kind(k+str(i), random.randint(7, MAX_VALUE_MQ), random.randint(1, MAX_WEIGHT_MQ), k))
 
 def gen_Bags():
     for k in kinds:
