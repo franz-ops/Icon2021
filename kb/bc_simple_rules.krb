@@ -1,9 +1,0 @@
-# bc_simple_rules.krb
-
-what_disease_blight
-    use what_disease(blight)
-    when
-	    facts.cotton(True)
-	    facts.cotton_yellowing_leaves(True)
-
-
