@@ -1,6 +1,6 @@
 import sys
 
-sys.path.append(r'C:\Users\39348\Desktop\menu\kb')
+sys.path.append(r'kb')
 import driver_simple as driver
 
 if __name__ == '__main__':
