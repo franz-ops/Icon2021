@@ -1,0 +1,208 @@
+# questions.kqb
+
+sostanza_batterica_o_lattea($ans)
+	E' presente una sostanza batterica o lattea?
+	---
+	$ans = yn
+
+presenza_insetti($ans)
+    Sono presenti degli insetti?
+    ---
+	$ans = yn
+
+morte_della_pianta($ans)
+    Ha causato la morte delle pianta?
+    ---
+	$ans = yn
+
+appassimento($ans)
+    La pianta sta appassendo?
+    ---
+	$ans = yn
+
+base_danneggiata($ans)
+    Le piante infette sono state colpite alla base?
+    ---
+	$ans = yn
+
+deadhearths($ans)
+    Si e' presentata la sindrome del cuore morto o del fusto morto?
+    ---
+	$ans = yn
+
+scomparsa_foglie($ans)
+    Si nota la scomparsa o rottura delle foglie?
+    ---
+	$ans = yn
+
+lesioni_grigio_verdi($ans)
+    Ci sono lesioni grigio-verdi con bordi verde scuro o tra il rosso e il marrone?
+    ---
+	$ans = yn
+
+lesioni_allungate($ans)
+    Le lesioni sono allungate e puntate alle estremita'?
+    ---
+	$ans = yn
+
+# POMODORO
+
+macchie_scure($ans)
+	Ci sono delle macchie scure sul pomodoro?
+	---
+	$ans = yn
+
+macchie_anelli_foglie($ans)
+    Sono presenti macchie a forma di anello sulle foglie?
+    ---
+	$ans = yn
+
+macchie_scure_e_rotonde($ans)
+    Ci sono macchie scure e rotonde?
+    ---
+	$ans = yn
+
+macchie_scure_e_bordo_giallo($ans)
+    Sono presenti piccole macchie scure con bordo giallo?
+    ---
+	$ans = yn
+
+macchie_rotonde_e_infossate($ans)
+    Sul pomodoro sono presenti macchie rotonde ed infossate?
+    ---
+	$ans = yn
+
+muffa_bianca($ans)
+    E' presente della muffa bianca vicino allo stelo?
+    ---
+	$ans = yn
+
+colore_grigio($ans)
+    Il pomodororo sta assumendo un colore grigiastro?
+    ---
+	$ans = yn
+
+macchie($ans)
+    Sono presenti delle macchie?
+    ---
+	$ans = yn
+
+# COTONE
+
+piccole_macchie_rotonde($ans)
+    Piccole macchie rotonde?
+    ---
+	$ans = yn
+
+grandi_macchie_rotonde($ans)
+    Grandi macchie circolari?
+    ---
+	$ans = yn
+
+macchie_marroni_con_buchi($ans)
+    Macchie di medie dimensioni con buchi?
+    ---
+	$ans = yn
+
+macchie_con_bordi_marroni($ans)
+    Macchie di medie dimensioni con bordi marroni?
+    ---
+	$ans = yn
+
+muffa($ans)
+    E' presente della muffa sulla pianta?
+    ---
+	$ans = yn
+
+radici_marce($ans)
+    Le radici stanno marcendo?
+    ---
+	$ans = yn
+
+
+# MAIS
+
+scelta_coltura($ans)
+	Per quale coltura stai chiedendo la diagnosi?
+	---
+	$ans = select_1
+		1: Riso
+		2: Mais
+		3: Pomodoro
+		4: Cotone
+
+# Elmintosporiosi
+# Mosaico del mais
+# Avvizzimento batterico
+
+
+
+macchie_foglie($ans)
+	Ci sono macchie/striature sulle foglie?
+	---
+	$ans=yn
+
+colore_macchie($ans)
+	Di quale colore sono le macchie?
+	---
+	$ans = select_1
+		1: Verdi
+		2: Gialle
+		3: Bruno chiaro
+		4: Rosse
+
+
+# cima pazza
+nanismo($ans)  
+	Ci sono piante di dimensioni ridotte?
+	---
+	$ans=yn
+
+foglie_nastriformi($ans)
+	Le piante presentano foglie nastriformi?
+	---
+	$ans=yn
+
+arricciamento_foglie_superiori($ans)
+	Le piante presentano foglie superiori abbondantemente arricciate?
+	---
+	$ans=yn
+
+
+# marciume dello stocco
+rammollimento_fusto($ans)
+	Le piante presentano un fusto molle?
+	---
+	$ans=yn
+
+clima_umido($ans)
+	Il clima e' umido?
+	---
+	$ans=yn
+
+colore_muffa($ans) 
+	Quale colore ha la muffa?
+	---
+	$ans = select_1
+		1: Bianca
+		2: Rossa
+		3: Verde
+
+disgregazione_parte_interna($ans)
+	La parte interna e' disgregata?
+	---
+	$ans=yn
+
+
+# Avvizzimento batterico
+
+piante_avvizzite($ans)
+	Ci sono piante avvizzite?
+	---
+	$ans=yn
+
+macchie_margini($ans)
+	Le macchie interessano i margini delle foglie?
+	---
+	$ans=yn
+
