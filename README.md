@@ -16,7 +16,7 @@ Il progetto in questione è stato realizzato dal Team SmartFarm
 - Francesco Lobascio
 - Felice Tempesta
 
-Il progetto è stato creato per l'esame di Ingegneria della Conoscenza
+Il progetto è stato creato per l'esame di _Ingegneria della Conoscenza_.
 
 A.A 2020-2021
 
@@ -48,7 +48,7 @@ Università degli studi di Bari "Aldo Moro"
 |–– requirements.txt
 |–– terrain_classifier.py
 ```
-Documentazione: https://github.com/franz-ops/Icon2021/blob/main/Documentazione%20Smart%20Farm.pdf
+Documentazione di progetto: https://github.com/franz-ops/Icon2021/blob/main/Documentazione%20Smart%20Farm.pdf
 
 ## 3. Requisiti 
 
