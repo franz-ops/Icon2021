@@ -9,7 +9,7 @@ MAX_KIND = 3
 MAX_BAGS_PER_KIND = 10
 MAX_VALUE_MQ = 15
 MAX_WEIGHT_MQ = 7
-MAX_MQ = 250
+MAX_MQ = 500
 MIN_MQ = 50
 
 kinds = []
@@ -17,9 +17,14 @@ bags = []
 
 def gen_kinds(plants):
     dictKinds = {}
+    max_a = 0
+    global MAX_MQ
     for p in plants:
         dictKinds[p] = random.randint(1, MAX_KIND)
-
+        if max_a<plants[p]:
+            max_a = plants[p]
+    if (int(max_a/5)>MIN_MQ):
+        MAX_MQ = int(max_a/5)
     
     for k in dictKinds:
         for i in range(dictKinds[k]):
