@@ -302,7 +302,7 @@ what_disease_Muro_grigio
         questions.colore_grigio(True)
 
 
-# --------------------- da controllare --------------------------------
+
 what_disease_Septoriosi
     use what_disease(Septoriosi)
     when
