@@ -75,6 +75,11 @@ DETTAGLI PER UNA CORRETTA ESECUZIONE:
           - Indicare i sintomi riscontati.
 
 
+
+
+- #### NB. Considerata la complessità del problema di ottimizzazione, per un test rapido si consiglia di NON inserire un numero elevato di terreni e/o budget.
+
+
 ## 4. Evoluzione del progetto
 
 In futuro, il progetto realizzato potrà essere utilizzato, ampliato e migliorato da aziende che operano nel settore, non solo regionale, ma anche nazionale e chissà…mondiale.
