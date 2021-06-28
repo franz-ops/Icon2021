@@ -54,7 +54,7 @@ Università degli studi di Bari "Aldo Moro"
 Per eseguire il progetto è necessario installare la seguente versione di Python:
 
 - `Python 3.7+`
-- Se eseguito su ambiente Linux potrebbe essere necessario installare tkinter: `sudo apt install python3-tk`
+- Se eseguito su ambiente Linux potrebbe essere necessario installare tkinter: `sudo apt-get install python3-tk`
 
 
 DETTAGLI PER UNA CORRETTA ESECUZIONE:
