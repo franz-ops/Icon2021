@@ -54,10 +54,11 @@ Università degli studi di Bari "Aldo Moro"
 Per eseguire il progetto è necessario installare la seguente versione di Python:
 
 - `Python 3.7+`
-
+- Se eseguito su ambiente Linux potrebbe essere necessario installare tkinter: `sudo apt install python3-tk`
 
 
 DETTAGLI PER UNA CORRETTA ESECUZIONE:
+- Installare i pacchetti necessari: `pip install -r requirements.txt`
 - Eseguito il progetto verrà visualizzata un'interfaccia;
 - Saranno mostrate 2 opzioni: "Inserimento terreni" e "Scopri Malattia";
     ### 1° Opzione
