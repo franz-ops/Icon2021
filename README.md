@@ -1,4 +1,4 @@
-# SMART FARM
+![370-3706254_smart-farm-logo-smart-farm](https://user-images.githubusercontent.com/61507922/123624605-0e3e3900-d80f-11eb-85dd-b557710074e4.png)
 
 ## Indice
 
