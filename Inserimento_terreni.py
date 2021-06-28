@@ -32,7 +32,7 @@ def send_info(listTerrain, listMq):
     text_output = tk.Label(window, text=text, fg="#67BD66", font=("Times New Roman", 16)
                            ).place(x=270, y=350)
     inputDim = float(textDim.get("1.0", "end-1c"))
-    if inputDim < 0:
+    if inputDim < 100 or inputDim > 10000:
         aux = True
     inputPh = float(textPh.get("1.0", "end-1c"))
     if inputPh < 0 or inputPh > 14:
