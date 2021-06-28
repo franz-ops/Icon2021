@@ -20,7 +20,7 @@ def print_hist_features(ds):
 
 
 if __name__ == '__main__':
-    data = pd.read_csv('datasets/Crop_recommendation.csv')
+    data = pd.read_csv('Crop_recommendation.csv')
     
     #Dataset label distribution
     histogram = data['label'].value_counts()
