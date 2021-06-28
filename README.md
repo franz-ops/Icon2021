@@ -56,6 +56,23 @@ Per eseguire il progetto è necessario installare la seguente versione di Python
 - `Python 3.7+`
 
 
+
+DETTAGLI PER UNA CORRETTA ESECUZIONE:
+- Eseguito il progetto verrà visualizzata un'interfaccia;
+- Saranno mostrate 2 opzioni: "Inserimento terreni" e "Scopri Malattia";
+    ### 1° Opzione
+          - inserire i dati e visualizzare la ricerca effettuata dal sistema intelligente;
+          - inviati i dati e ricevuta conferma, selezionare "Visualizza dati inseriti";
+          - Cliccando sulla "X" d'uscita, ci si sposterà sulla console dell'IDE, nella quale si potranno visualizzare: Varietà, Incassi previsti, Costi e Area Coltivata in               mq;
+          - Inserire il budget previsto;
+          - Il sistema fornirà gli incassi previsti, i costi di mantenimento previsti per ogni varietà.
+
+    ### 2° Opzione
+          - Selezionata "Scopri Malattia", ci si sposterà sulla console, nella quale si interrogherà la KB;
+          - Selezionare la coltura di interesse;
+          - Indicare i sintomi riscontati.
+
+
 ## 4. Evoluzione del progetto
 
 In futuro, il progetto realizzato potrà essere utilizzato, ampliato e migliorato da aziende che operano nel settore, non solo regionale, ma anche nazionale e chissà…mondiale.
