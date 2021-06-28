@@ -27,11 +27,24 @@ Università degli studi di Bari "Aldo Moro"
 ```
 |–– datasets
 |    |–– Crop_recommendation.csv
-|–– .gitignore
+|–– img
+|    |–– bg.png
+|    |–– colture.png
+|    |–– disease.png
+|    |–– logo.png
+|    |–– terrain.png
+|    |–– terreno.png
+|–– kb
+|    |–– bc_simple_rules_questions.krb
+|    |–– driver_simple.py
+|    |–– questions.kqb
 |-- Documentazione Smart Farm.pdf
+|-- Inserimento_terreni.py
 |-- README.md
+|-- kb_main.py
 |–– main.py
 |–– marketplace.py
+|–– requirements.txt
 |–– terrain_classifier.py
 |–– train_test_crop.py
 ```
