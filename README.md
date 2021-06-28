@@ -27,6 +27,7 @@ Università degli studi di Bari "Aldo Moro"
 ```
 |–– datasets
 |    |–– Crop_recommendation.csv
+|    |–– train_test_crop.py
 |–– img
 |    |–– bg.png
 |    |–– colture.png
@@ -46,7 +47,6 @@ Università degli studi di Bari "Aldo Moro"
 |–– marketplace.py
 |–– requirements.txt
 |–– terrain_classifier.py
-|–– train_test_crop.py
 ```
 
 ## 3. Requisiti 
