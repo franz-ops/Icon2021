@@ -48,6 +48,7 @@ Università degli studi di Bari "Aldo Moro"
 |–– requirements.txt
 |–– terrain_classifier.py
 ```
+Documentazione: https://github.com/franz-ops/Icon2021/blob/main/Documentazione%20Smart%20Farm.pdf
 
 ## 3. Requisiti 
 
